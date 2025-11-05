@@ -1,0 +1,241 @@
+Day-19
+
+5/11/2025
+
+Constructors:
+
+this()
+
+Usage:
+this() is used to call another constructor within the same class.
+
+Placement:
+It must be first statement in the constructor if used. It allows constructor to involve another constructor to avoid code duplication and manage different initialization scenarios within the same class.
+
+Example:
+Useful when a class has multiple constructors with varying parameters, allowing them to call each other to ensure consistent initialization logic.
+
+this keyword:
+In java this is a reference variable that refers to the current object instance, it can be used in several contexts.
+
+1.To refer to instance variables when there is ambiguity between instance variables and local variables or method parameters this is used to refer current instance variable.
+2. To involve current class method :
+ 
+Constructor Chaining
+
+You can use this() to call another constructor from within a constructor. And another constructor can call another level constructor within same class this is nothing but constructor chaining.
+
+
+
+
+Day-19 Constructor chaing with this keyword
+------------------------------------------------
+Problem Statement-1)
+At TechNova Pvt. Ltd., HR wants to manage employee records and calculate bonuses based on salary and experience.
+ Each employee has the following details:
+empId
+name
+salary
+experience (in years)
+
+
+The company gives bonuses as follows:
+If experience < 3 years → 5% of salary
+If experience between 3 and 7 → 10% of salary
+If experience > 7 → 15% of salary
+
+
+Use constructor chaining to initialize employee details and the this keyword to access instance variables and methods within the class.
+Input Format
+empId name salary experience
+
+Output Format
+Employee Details:
+ID: <empId>
+Name: <name>
+Salary: <salary>
+Experience: <experience>
+Bonus: <calculated bonus>
+
+
+Test Case 1
+Input:
+101 Ravi 50000 2
+
+Output:
+Employee Details:
+ID: 101
+Name: Ravi
+Salary: 50000.0
+Experience: 2
+Bonus: 2500.0
+
+Explanation:
+ Experience < 3 → Bonus = 5% of 50000 = 2500.
+
+Test Case 2
+Input:
+102 Sneha 70000 5
+
+Output:
+Employee Details:
+ID: 102
+Name: Sneha
+Salary: 70000.0
+Experience: 5
+Bonus: 7000.0
+
+Explanation:
+ Experience between 3 and 7 → Bonus = 10% of 70000 = 7000.
+
+Test Case 3
+Input:
+103 Arjun 90000 8
+
+Output:
+Employee Details:
+ID: 103
+Name: Arjun
+Salary: 90000.0
+Experience: 8
+Bonus: 13500.0
+
+Explanation:
+ Experience > 7 → Bonus = 15% of 90000 = 13500.
+
+-----------------------------------------------------------------------------------------------------------
+Question 2): Bank Loan Interest Calculator
+Scenario:
+At SafeBank Ltd., a system is required to manage customer loan details.
+ Each customer has:
+loanId
+customerName
+loanAmount
+loanType (Home / Car / Personal)
+
+
+Each loan type has a different interest rate:
+Home Loan → 8%
+Car Loan → 9%
+Personal Loan → 11%
+
+
+Use constructor chaining to initialize data and use this keyword to access instance variables and methods.
+ The system must calculate the total amount payable = loanAmount + (loanAmount × interestRate / 100).
+
+Input Format
+loanId customerName loanAmount loanType
+Output Format
+Loan Details:
+Loan ID: <loanId>
+Customer Name: <customerName>
+Loan Amount: <loanAmount>
+Loan Type: <loanType>
+Total Payable: <calculated amount>
+
+
+Test Case 1
+Input:
+201 Ramesh 200000 Home
+Output:
+Loan Details:
+Loan ID: 201
+Customer Name: Ramesh
+Loan Amount: 200000.0
+Loan Type: Home
+Total Payable: 216000.0
+Explanation:
+ Home Loan → 8% interest → 200000 + 8% = 216000
+
+Test Case 2
+Input:
+202 Kavya 300000 Car
+Output:
+Loan Details:
+Loan ID: 202
+Customer Name: Kavya
+Loan Amount: 300000.0
+Loan Type: Car
+Total Payable: 327000.0
+Explanation:
+ Car Loan → 9% → 300000 + 9% = 327000
+
+Test Case 3
+Input:
+203 Anil 150000 Personal
+Output:
+Loan Details:
+Loan ID: 203
+Customer Name: Anil
+Loan Amount: 150000.0
+Loan Type: Personal
+Total Payable: 166500.0
+Explanation:
+ Personal Loan → 11% → 150000 + 11% = 166500
+------------------------------------------------------------------------------------------------------
+Question 3): Vehicle Mileage Tracker
+Scenario:
+At GreenDrive Motors, the company tracks vehicle fuel efficiency.
+ Each vehicle has:
+vehicleNo
+brand
+fuelConsumed (in liters)
+distanceTravelled (in kilometers)
+
+
+The mileage is calculated as:
+mileage = distanceTravelled / fuelConsumed
+
+You must:
+Use constructor chaining to initialize data.
+Use this keyword to refer to instance variables and methods.
+
+
+
+Input Format
+vehicleNo brand fuelConsumed distanceTravelled
+
+Output Format
+Vehicle Details:
+Vehicle No: <vehicleNo>
+Brand: <brand>
+Fuel Consumed: <fuelConsumed>
+Distance Travelled: <distanceTravelled>
+Mileage: <calculated mileage> km/l
+
+
+Test Case 1
+Input:
+KA01MH1234 Tata 20 300
+
+Output:
+Vehicle Details:
+Vehicle No: KA01MH1234
+Brand: Tata
+Fuel Consumed: 20.0
+Distance Travelled: 300.0
+Mileage: 15.0 km/l
+
+
+Test Case 2
+Input:
+TS09AB6789 Hyundai 25 450
+Output:
+Vehicle Details:
+Vehicle No: TS09AB6789
+Brand: Hyundai
+Fuel Consumed: 25.0
+Distance Travelled: 450.0
+Mileage: 18.0 km/l
+
+
+Test Case 3
+Input:
+AP07CD9999 Honda 18 324
+Output:
+Vehicle Details:
+Vehicle No: AP07CD9999
+Brand: Honda
+Fuel Consumed: 18.0
+Distance Travelled: 324.0
+Mileage: 18.0 km/l

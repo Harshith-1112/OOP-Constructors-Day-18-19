@@ -1,0 +1,590 @@
+Day-18 
+
+4/11/2025
+
+Garbage Collection:
+
+The ways to an object eligible for GC.
+
+nullifying the reference variable.
+Reassign the reference variable.
+Objects are created inside method.
+island isolation.
+
+
+Finalize:
+
+What is the role of Finalize Method?
+
+The finalize() method is a special method provided by the object class in java. Which can over ridden to perform clean up operations before an object is Garbage Collected.
+
+
+
+
+Constructor:
+
+Object creation is not enough compulsory we should perform initialization then only the object is in a position to provide response properly.
+
+when ever we are creating an object some piece of code will be executed automatically to perform initialization of an object this piece of code is nothing but Constructor.
+
+Hence the main Objective of Constructor is to perform initialization of an object.
+
+
+
+Rules to write Constructors:
+
+1.Name of the constructor and name of the class must be same.
+2. Return type concept is not applicable for constructor even void also by mistake if we are declaring the return type for the constructor we wont get any compile time and runtime error compiler simply treats it as a method.
+3. The only applicable modifiers to declare constructors are public, private, protected and default.
+
+Types of Constructors:
+
+There are 3 types of constructors.
+
+Default constructor:
+
+For Every class in java including abstract classes also constructor concept is applicable.
+
+If we are not writing at least one constructor then compiler will generate default constructor.
+
+If we are writing at least one constructor then complier won't generate any default constructor. Hence every class contains either compiler generated constructor or programmer written constructor but not both simultaneously.
+
+Syntax:
+
+public className(){
+}
+
+Parameterized constructor:
+
+a parameterized constructor in java is a constructor that allow you to initialize the Objects of a class with specific values at a time of Object creation.
+
+unlike the default constructor, which takes no arguments, a parameterized constructor accept one or more parameters.
+
+Syntax:
+
+public className(parameter-list){
+
+}
+
+Copy Constructor:
+
+A copy constructor in java is a special type of constructor that initializes a new object as a copy of an existing object of the same class.
+
+It accepts on object of the same class as parameter and initializes the new object state with values from existing object.
+
+Syntax:
+
+modifier className(classObject){
+}
+
+
+Question:
+In the bustling School of Learnville, administrator Clara manages student records using a Student class.
+She needs a parameterized constructor to initialize a student's roll number and name when a new student is enrolled with specific details.
+This ensures that each student object is created with valid data, avoiding manual setting of fields after creation.
+Your task is to write a Java program that defines a Student class with a parameterized constructor accepting a roll number (integer) and name (string).
+Include a method to display the student's details and a main method to create and print a student object based on input values,
+
+Testcase-1
+Input:
+101
+Amit
+
+Output:
+Roll Number: 101
+Name: Amit
+
+
+
+OOP Day-2 Constructors Day-18
+=================================
+
+Question-1) 
+create a Java program using a class called Student with the following specifications:
+
+Class Requirements:
+Instance Variables:
+
+String name
+
+int rollNumber
+
+int[] marks (for 3 subjects)
+
+Constructors:
+
+Default Constructor:
+
+Set name to "Unknown"
+
+Roll number to 0
+
+Marks to {0, 0, 0}
+
+Parameterized Constructor:
+
+Accept name, roll number, and marks for 3 subjects
+
+Instance Methods:
+
+void displayDetails()
+→ Print name, roll number, and all marks
+
+int calculateTotal()
+→ Return the total of all 3 marks
+
+double calculateAverage()
+→ Return the average of the marks
+
+ In the main() method (inside another class named StudentDemo), do the following:
+Create one object using the default constructor
+
+Create another object using the parameterized constructor
+
+Call displayDetails(), calculateTotal(), and calculateAverage() for both objects complete this task based on the fallowing conditions
+ ---------------------------------------------------------------------------------------------------------------
+
+Question 2): Greenwood High Registration
+Question:
+ At Greenwood High School, the administration is launching an online portal to manage student registrations.
+ Each student has a name, roll number, and grade level (1 to 12).
+ The system must ensure that the name is not empty, the roll number is positive, and the grade level is valid.
+ If any input is invalid, the constructor should throw an exception.
+ Create a method showProfile to display the student’s details.
+
+Testcase-1
+Input:
+Alice Brown
+101
+10
+
+Output:
+Name: Alice Brown, Roll Number: 101, Grade: 10
+
+Testcase-2
+Input:
+Ravi Kumar
+0
+9
+
+Output:
+Error: Roll number must be positive
+
+Testcase-3
+Input:
+Clara Davis
+103
+13
+
+Output:
+Error: Grade level must be between 1 and 12
+
+Testcase-4
+Input:
+David Lee
+104
+8
+
+Output:
+Name: David Lee, Roll Number: 104, Grade: 8
+-----------------------------------------------------------------------------------------------------------------------
+
+Question 3: ZoomCar Rentals
+Question:
+ ZoomCar Rentals manages vehicle bookings.
+ Each car has a brand, model, and rental price per day.
+ Validate that brand and model are not empty and price is positive.
+ If invalid, throw an exception.
+ Create method displayCarInfo() to show car details.
+Testcase-1
+Input:
+Toyota
+Camry
+50.0
+
+Output:
+Brand: Toyota, Model: Camry, Price per Day: 50.00
+
+Testcase-2
+Input:
+Honda
+Accord
+0.0
+
+Output:
+Error: Rental price must be positive
+
+Testcase-3
+Input:
+Ford
+Mustang
+75.0
+
+Output:
+Brand: Ford, Model: Mustang, Price per Day: 75.00
+
+Testcase-4
+Input:
+Hyundai
+Venue
+30.0
+
+Output:
+Brand: Hyundai, Model: Venue, Price per Day: 30.00
+
+----------------------------------------------------------------------------------
+Question 4: Bright Future Academy – Attendance System
+Question:
+ Bright Future Academy is implementing a digital attendance system to track student presence.
+ Each student has an ID, name, and attendance status (Present or Absent).
+ The system must validate:
+ID must be positive
+
+
+Name must not be empty or null
+
+
+Status must be either "Present" or "Absent"
+ If any input is invalid, throw an exception.
+ Create a method displayAttendance() to show details in the format:
+ ID: [id], Name: [name], Status: [status].
+
+
+Testcase-1
+Input:
+101
+Emma Wilson
+Present
+
+Output:
+ID: 101, Name: Emma Wilson, Status: Present
+
+ Testcase-2
+Input:
+0
+Liam Brown
+Present
+
+Output:
+Error: ID must be positive
+
+ Testcase-3
+Input:
+103
+Olivia Davis
+Late
+
+Output:
+Error: Status must be "Present" or "Absent"
+
+ Testcase-4
+Input:
+104
+Noah Lee
+Absent
+
+Output:
+ID: 104, Name: Noah Lee, Status: Absent
+-------------------------------------------------------------------------------------------
+Question 5: Tasty Bites Restaurant – Menu Item Management
+Question:
+ Tasty Bites Restaurant is digitizing its menu.
+ Each item has a name, price, and category (e.g., Appetizer, Main Course).
+ Validate:
+Name and Category must not be empty or null
+
+
+Price must be positive
+ Throw an exception if invalid.
+ Display details in format:
+ Item: [name], Price: [price], Category: [category].
+
+
+Testcase-1
+Input:
+Spring Rolls
+5.99
+Appetizer
+
+Output:
+Item: Spring Rolls, Price: 5.99, Category: Appetizer
+
+ Testcase-2
+Input:
+Pasta
+0.0
+Main Course
+
+Output:
+Error: Price must be positive
+
+Testcase-3
+Input:
+Cheesecake
+6.99
+Dessert
+
+Output:
+Item: Cheesecake, Price: 6.99, Category: Dessert
+-------------------------------------------------------------------------------------
+Question 6:) FitLife Gym – Workout Tracker
+Question:
+ FitLife Gym app tracks workouts.
+ Each record stores user name, steps taken, and calories burned.
+ Validate:
+Name must not be empty or null
+
+
+Steps and Calories must be non-negative
+ Throw exception if invalid.
+ Display using format:
+ User: [name], Steps: [steps], Calories Burned: [calories].
+
+
+Testcase-1
+Input:
+Sophie Green
+10000
+500.0
+
+Output:
+User: Sophie Green, Steps: 10000, Calories Burned: 500.00
+
+Testcase-2
+Input:
+James White
+-100
+300.0
+
+Output:
+Error: Steps must be non-negative
+
+ Testcase-3
+Input:
+Lily Brown
+12000
+-50.0
+
+Output:
+Error: Calories burned must be non-negative
+
+ Testcase-4
+Input:
+Oliver Black
+15000
+600.0
+
+Output:
+User: Oliver Black, Steps: 15000, Calories Burned: 600.00
+
+------------------------------------------------------------------------------------------------------
+Question 7) — ShopEasy Product Management System
+Question:
+ Emma runs an online store called ShopEasy, selling electronics.
+ To manage customer orders, she needs a Java class Product to represent items in the cart.
+ Each product has a name, price, and quantity available.
+The constructor should initialize these attributes and validate that:
+Name is not empty
+
+
+Price is positive
+
+
+Quantity is non-negative
+
+
+If any input is invalid, throw an exception.
+ Create a method displayProduct() to show the product details.
+ Emma wants the system to handle bulk orders efficiently and display product information clearly for customers browsing her website.
+Testcases
+testcase-1
+input
+Laptop
+999.99
+5
+output
+Product: Laptop, Price: 999.99, Quantity: 5
+
+testcase-2
+input
+cell
+499.99
+10
+output
+Product: cell, Price: 499.99, Quantity: 10
+
+testcase-3
+input
+Phone
+0.0
+8
+output
+Error: Price must be positive
+
+testcase-4
+input
+Tablet
+299.99
+-1
+output
+Error: Quantity must be non-negative
+
+testcase-5
+input
+Headphones
+79.99
+20
+output
+Product: Headphones, Price: 79.99, Quantity: 20
+
+-------------------------------------------------------------------------------------------
+Question 8 — SkyHigh Airlines Flight Booking System
+Question:
+ SkyHigh Airlines is developing an online booking system to manage flight reservations.
+ Each flight has a flight number, destination, and fare.
+The system must validate that:
+Flight number and destination are not empty
+
+
+Fare is positive
+
+
+If invalid, throw an exception.
+ Create a method displayFlight() to show the flight details.
+Testcases
+testcase-1
+input
+AA123
+New York
+250.0
+output
+Flight: AA123, Destination: New York, Fare: 250.00
+
+testcase-2
+input
+AA
+London
+300.0
+output
+Flight: AA, Destination: London, Fare: 300.00
+
+testcase-3
+input
+BA456
+Paris
+0.0
+output
+Error: Fare must be positive
+
+testcase-4
+input
+UA789
+Tokyo
+500.0
+output
+Flight: UA789, Destination: Tokyo, Fare: 500.00
+
+testcase-5
+input
+DL101
+Paris
+200.0
+output
+Flight: DL101, Destination: Paris, Fare: 200.00
+-------------------------------------------------------------------------------------------------
+Question 9 — City Parking Services System
+Question:
+ City Parking Services is developing a system to manage parking slots.
+ Each vehicle has a type, license plate, and hours parked.
+Validations:
+Type and license plate cannot be empty
+
+
+Hours parked must be non-negative
+
+
+If invalid, throw an exception.
+ Create a method displayVehicle() to show vehicle details.
+Testcases
+testcase-1
+input
+Car
+ABC123
+4
+output
+Type: Car, License: ABC123, Hours Parked: 4
+
+testcase-2
+input
+Scooty
+XYZ789
+3
+output
+Type: Scooty, License: XYZ789, Hours Parked: 3
+
+testcase-3
+input
+Truck
+LMN456
+-1
+output
+Error: Hours parked must be non-negative
+
+testcase-4
+input
+Van
+PQR101
+5
+output
+Type: Van, License: PQR101, Hours Parked: 5
+-------------------------------------------------------------------------------------------------------
+Question 10 — PowerFit Gym Membership System
+Question:
+ PowerFit Gym is launching a membership management system.
+ Each membership has a member name, plan type (Basic, Premium, etc.), and monthly fee.
+Validations:
+Name and plan type cannot be empty
+Fee must be positive
+
+
+If invalid, throw an exception.
+ Create a method displayMembership() to show membership details.
+Testcases
+testcase-1
+input
+Tom Wilson
+Premium
+50.0
+output
+Member: Tom Wilson, Plan: Premium, Fee: 50.0
+
+testcase-2
+input
+Wilson
+Basic
+30.0
+output
+Member: Wilson, Plan: Basic, Fee: 30.0
+
+testcase-3
+input
+Mark Lee
+Standard
+0.0
+output
+Error: Fee must be positive
+
+testcase-4
+input
+Emma Davis
+Basic
+25.0
+output
+Member: Emma Davis, Plan: Basic, Fee: 25.0
+
+
+
+
+
+
+  
