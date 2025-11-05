@@ -1,48 +1,41 @@
-package com.codegnan.oopconstructorsaq;
+package com.condegnan.oopexamples;
 
-class Student {
+import java.util.Scanner;
+
+public class Student {
 	String name;
 	int rollNumber;
-	int[] marks=new int[3];
+	int grade;
 	
-	// Default Constructor
-	Student() {
-		name="Unknown";
-		rollNumber=0;
-		marks[0]=0;
-		marks[1]=0;
-		marks[2]=0;
+	public Student(String name,int rollNumber, int grade) {
+		if(name==null||name.trim().isEmpty()) {
+			System.out.println("Name cannot be empty or null");
+			
+		}
+		if(rollNumber<=0) {
+			System.out.println("Roll NUmber must be Positive");
+		}
+		if(grade<1||grade>12) {
+			System.out.println("Grade Level Must be Between 1 to 12");
+		}
+		this.name=name;
+		this.rollNumber=rollNumber;
+		this.grade=grade;
+
 	}
-	
-	// Parameterized Constructor 
-	Student(String name, int rollNumber, int[] marks){
-		this.name = name;
-        this.rollNumber = rollNumber;
-        this.marks = marks;
-    }
+	public String showProfile() {
+		return "Name : " + name +", Roll Number : "+rollNumber+",Grade : "+grade;
+	}
 
-    // Method to display details
-    void displayDetails() {
-        System.out.println("Name: " + name);
-        System.out.println("Roll Number: " + rollNumber);
-        System.out.print("Marks: ");
-        for (int mark : marks) {
-            System.out.print(mark + " ");
-        }
-        System.out.println();
-    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String name=sc.nextLine();
+		int roll=sc.nextInt();
+		int grade=sc.nextInt();
+		Student s1=new Student(name,roll,grade);
+		System.out.println(s1.showProfile());
+		sc.close();
 
-    // Method to calculate total
-    int calculateTotal() {
-        int total = 0;
-        for (int mark : marks) {
-            total += mark;
-        }
-        return total;
-    }
+	}
 
-    // Method to calculate average
-    double calculateAverage() {
-        return calculateTotal() / 3.0;
-    }
 }
